@@ -1,5 +1,6 @@
 package sena.edu.co.emparejapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -39,7 +40,8 @@ public class SplashActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                //startActivity(new Intent(this, MainActivity.class));
+                //Creo una intención para que cuando termine el splash me mande al xml de registro.
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
                 //Finalizo el splash cuando se termine el tiempo.
                 finish();
             }
