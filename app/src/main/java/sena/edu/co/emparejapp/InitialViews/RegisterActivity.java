@@ -68,6 +68,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         } else if (!etUsuario.getText().toString().isEmpty()) {
             //Obtengo la base de datos en modo escritura
             SQLiteDatabase db = conexion.getWritableDatabase();
+            //Se agrega un nuevo map de valores.
             ContentValues datos = new ContentValues();
             datos.put(Tabla.CAMPO_NICKNAME,etUsuario.getText().toString());
             long id = db.insert(Tabla.TABLA_PLAYER, null, datos);
