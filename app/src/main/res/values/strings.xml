@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">EmparejApp</string>
-    <string name="tvBienvenidaR">Bienvenid@ a EmparejApp, por favor crea un nombre de Usuario.</string>
-    <string name="etBienvenidaR">Ingresa tu nickname</string>
-    <string name="btnRegistrarR">Registrarme</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_easy_level">EasyLevelActivity</string>
 </resources>
