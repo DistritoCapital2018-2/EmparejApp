@@ -1,5 +1,7 @@
 package sena.edu.co.emparejapp.InitialViews;
 
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +17,7 @@ import sena.edu.co.emparejapp.ConexionSQLiteOpenHelper.ConexionSQLiteOpenHelper;
 import sena.edu.co.emparejapp.R;
 import sena.edu.co.emparejapp.Tabla.Tabla;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Instancio los componentes
     ImageView imgWsR;
@@ -30,42 +32,50 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        //Instancio los componentes con el xml
         imgWsR = findViewById(R.id.imgWsR);
-        textoBienvenida = findViewById(R.id.etBienvenidaR);
+        textoBienvenida = findViewById(R.id.tvBienvenidaR);
         btnRegistrar = findViewById(R.id.btnRegistrarR);
         etUsuario = findViewById(R.id.etBienvenidaR);
 
-        //Creo la conexion.
-        conexion = new ConexionSQLiteOpenHelper(this, Tabla.TABLA_PLAYER, null ,1);
+        //Agrego el boton para que me escuche la accion del onClickListener.
+        btnRegistrar.setOnClickListener(this);
+        //Creo una nueva conexión.
+        conexion = new ConexionSQLiteOpenHelper(this, Tabla.TABLA_PLAYER, null, 1);
 
     }
 
-    //Al presionar el boton de registro, me hace el insert hacia la base de datos.
-    public void onClick(View view) {
-
-        switch (view.getId() ){
-
+    //Evento onClick del boton registrar
+    @Override
+    public void onClick(View v) {
+        //Realizo un switch con los id's de las vistas.
+        switch (v.getId()) {
             case R.id.btnRegistrarR:
+                //En caso de que sea el boton registrar, mando al metodo registrarUsuario.
                 registrarUsuario();
                 break;
-
         }
-
-
-
     }
 
+    //Metodo registrar usuario
     private void registrarUsuario() {
-        if(etUsuario.getText().toString().isEmpty()){
-            Toast.makeText(this, "Ingresa un nickname", Toast.LENGTH_LONG);
+        //Si el usuario coloca en el nickname un campo vacio, este le pedira que ingrese nuevamente.
+        if (etUsuario.getText().toString().isEmpty()) {
+            //Toast con el mensaje
+            Toast.makeText(this, "Ingresa un nickname", Toast.LENGTH_LONG).show();
 
-        }else if (!etUsuario.getText().toString().isEmpty()){
-            SQLiteDatabase db = conexion.getReadableDatabase();
-            db.rawQuery("INSERT INTO "+Tabla.TABLA_PLAYER+" ("+Tabla.CAMPO_NICKNAME+") VALUES ("+etUsuario.getText().toString()+")",null);
-
-
+            //En caso de que el usuario agrege un nickname
+        } else if (!etUsuario.getText().toString().isEmpty()) {
+            //Obtengo la base de datos en modo escritura
+            SQLiteDatabase db = conexion.getWritableDatabase();
+            ContentValues datos = new ContentValues();
+            datos.put(Tabla.CAMPO_NICKNAME,etUsuario.getText().toString());
+            long id = db.insert(Tabla.TABLA_PLAYER, null, datos);
+            Toast.makeText(getApplicationContext(), "Usuario N#:"+id , Toast.LENGTH_LONG).show();
             db.close();
+
         }
+
 
     }
 
