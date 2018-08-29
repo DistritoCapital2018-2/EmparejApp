@@ -6,4 +6,5 @@
     <string name="etBienvenidaR">Ingresa tu nickname</string>
     <string name="btnRegistrarR">Registrarme</string>
     <string name="title_activity_register">registerActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>
