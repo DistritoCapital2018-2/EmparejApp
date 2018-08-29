@@ -1,4 +1,4 @@
-package sena.edu.co.emparejapp;
+package sena.edu.co.emparejapp.InitialViews;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import sena.edu.co.emparejapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package sena.edu.co.emparejapp;
+package sena.edu.co.emparejapp.InitialViews;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -9,8 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import sena.edu.co.emparejapp.ConexionSQLiteOpenHelper.ConexionSQLiteOpenHelper;
+import sena.edu.co.emparejapp.R;
 import sena.edu.co.emparejapp.Tabla.Tabla;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -41,9 +43,30 @@ public class RegisterActivity extends AppCompatActivity {
     //Al presionar el boton de registro, me hace el insert hacia la base de datos.
     public void onClick(View view) {
 
-        SQLiteDatabase db = conexion.getReadableDatabase();
-        db.rawQuery("INSERT INTO "+Tabla.TABLA_PLAYER+" ("+Tabla.CAMPO_NICKNAME+") VALUES ("+etUsuario.getText().toString()+")",null);
-        db.close();
+        switch (view.getId() ){
+
+            case R.id.btnRegistrarR:
+                registrarUsuario();
+                break;
+
+        }
+
+
 
     }
+
+    private void registrarUsuario() {
+        if(etUsuario.getText().toString().isEmpty()){
+            Toast.makeText(this, "Ingresa un nickname", Toast.LENGTH_LONG);
+
+        }else if (!etUsuario.getText().toString().isEmpty()){
+            SQLiteDatabase db = conexion.getReadableDatabase();
+            db.rawQuery("INSERT INTO "+Tabla.TABLA_PLAYER+" ("+Tabla.CAMPO_NICKNAME+") VALUES ("+etUsuario.getText().toString()+")",null);
+
+
+            db.close();
+        }
+
+    }
+
 }
