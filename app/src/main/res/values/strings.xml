@@ -2,4 +2,14 @@
     <string name="app_name">EmparejApp</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_easy_level">EasyLevelActivity</string>
+
+    <!-- Main Activity-->
+
+    <string name="tvEstadoEL">Estado: %s</string>
+    <string name="tvDificultadEL">Dificultad: Facil</string>
+    <string name="tvPlayer1EL">Jugador 1</string>
+    <string name="tvPlayer2EL">Jugador 2</string>
+    <string name="tvPuntosPlayer1EL">Puntos: %d</string>
+    <string name="tvPuntosPlayer2EL">%d : Puntos</string>
+    <string name="btnBuscarOponente">Buscar Oponente</string>
 </resources>

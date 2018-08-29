@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="de"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Levels.EasyLevelActivity"
     tools:showIn="@layout/activity_easy_level">
@@ -13,8 +14,208 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@null"
         android:src="@drawable/icono144x144"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEstadoEL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvEstadoEL"
+        android:textColor="@color/colorBlue"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/tvDificultadEL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvDificultadEL"
+        android:textColor="@android:color/holo_red_light"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/tvPlayer1EL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvPlayer1EL"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEstadoEL" />
+
+    <TextView
+        android:id="@+id/tvPuntosPlayer1EL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/tvPuntosPlayer1EL"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlayer1EL"
+        app:layout_constraintStart_toEndOf="@+id/tvPlayer1EL"
+        app:layout_constraintTop_toTopOf="@+id/tvPlayer1EL" />
+
+    <TextView
+        android:id="@+id/tvPlayer2EL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tvPlayer2EL"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDificultadEL" />
+
+    <TextView
+        android:id="@+id/tvPuntosPlayer2EL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/tvPuntosPlayer2EL"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPlayer2EL"
+        app:layout_constraintEnd_toStartOf="@+id/tvPlayer2EL"
+        app:layout_constraintTop_toTopOf="@+id/tvPlayer2EL" />
+
+
+    <ImageButton
+        android:id="@+id/imbCarta1EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayer1EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <ImageButton
+        android:id="@+id/imbCarta2EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPlayer2EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <ImageButton
+        android:id="@+id/imbCarta3EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imbCarta1EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <ImageButton
+        android:id="@+id/imbCarta4EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imbCarta2EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <ImageButton
+        android:id="@+id/imbCarta5EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imbCarta3EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <ImageButton
+        android:id="@+id/imbCarta6EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imbCarta4EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <ImageButton
+        android:id="@+id/imbCarta7EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imbCarta5EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <ImageButton
+        android:id="@+id/imbCarta8EL"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorTransparent"
+        android:contentDescription="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imbCarta6EL"
+        app:srcCompat="@drawable/cartel" />
+
+    <Button
+        android:id="@+id/btnBuscarOponente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/boton_azul_pro"
+        android:text="@string/btnBuscarOponente"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imbOfflineEL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/boton_azul_pro"
+        android:contentDescription="@null"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_offline_w" />
 </android.support.constraint.ConstraintLayout>
